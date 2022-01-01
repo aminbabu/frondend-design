@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Go Mudi Go</title>
+
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="./assets/packages/bootstrap/css/bootstrap.min.css"
+    />
+
+    <!-- Font awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="./assets/packages/fontawesome/css/all.min.css"
+    />
+
+    <!-- Custon css -->
+    <link rel="stylesheet" href="./assets/css/style.min.css" />
+  </head>
+  <body>
+    <!-- header / start -->
+    <header id="header" class="fixed-top">
+      <nav class="navbar navbar-expand top-navbar navbar-gmg py-0 px-3 pe-md-0">
+        <button
+          class="navbar-nav-toggler btn fs-4 d-none d-md-inline-block"
+          aria-label="Toggle navigation"
+          type="button"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <button
+          class="navbar-nav-toggler-sm btn fs-4 d-md-none"
+          aria-label="Toggle navigation"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mainMenuOffcanvas"
+          aria-controls="mainMenuOffcanvas"
+        >
+          <span class="bar"></span>
+        </button>
+        <a class="navbar-brand d-none d-md-block px-3 py-0" href="./index.html">
+          <img
+            src="./assets/images/logo.png"
+            alt="GoMudiGo"
+            class="img-fluid"
+          />
+        </a>
+        <form class="w-100 px-2 py-2 py-md-0">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control rounded-0"
+              placeholder="Search for rice, patato, milk, sugar ..."
+            />
+            <button
+              type="submit"
+              class="input-group-text btn btn-light rounded-0"
+              id="product-search"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
+        <ul class="navbar-nav d-none d-md-flex">
+          <li class="nav-item d-none d-lg-inline-block">
+            <a class="nav-link fw-bold" href="#">
+              Request Product
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="#"> Track Order </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link lang-link d-none d-lg-inline-block fw-bold"
+              href="./index.html"
+            >
+              <span class="lang active text-uppercase">en</span>
+              |
+              <span class="lang text-uppercase">বাং</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link sign-in d-none d-md-inline-block fw-bold"
+              href="#signinModal"
+              data-bs-toggle="modal"
+            >
+              Sign in
+            </a>
+          </li>
+        </ul>
+        <div class="dot-menu d-md-none">
+          <a
+            href="#signin-up-sm"
+            role="button"
+            data-bs-toggle="modal"
+            class="fs-4 p-2"
+          >
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </a>
+        </div>
+      </nav>
+      <nav class="bottom-nav d-md-none navbar-gmg shadow ps-3 pe-2">
+        <a
+          class="d-flex align-items-center fw-bold px-3 py-2"
+          href="#"
+          style="gap: 1rem"
+        >
+          Track Order
+          <i class="fa-solid fa-angle-right ms-auto"></i>
+        </a>
+      </nav>
+      <nav
+        class="main-navbar offcanvas offcanvas-start overflow-auto shadow-sm border-end position-absolute start-0 top-100 bg-white"
+        data-bs-scroll="true"
+        tabindex="-1"
+        id="mainMenuOffcanvas"
+      >
+        <ul class="nav flex-column special-categories py-2">
+          <li class="nav-item mb-3">
+            <a href="#" class="nav-link d-flex link-light gmg-bg-orange">
+              <i
+                class="fa-solid fa-circle-user fa-4x gmg-text-light-orange"
+              ></i>
+              <div class="ms-2">
+                <span class="welcome-text">Welcome</span>
+                <h2 class="fs-5">GO MUDI</h2>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" href="./categories.html">
+              <i class="fa-solid fa-gift fa-lg gmg-text-orange"></i>
+              Offer
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" href="#">
+              <i class="fa-solid fa-tag fa-lg gmg-text-orange"></i>
+              Discount
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" href="#">
+              <i class="fa-regular fa-snowflake fa-lg text-info"></i>
+              Winter Care
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" href="#">
+              <i class="fa-solid fa-pump-medical fa-lg text-success"></i>
+              Hygiene
+            </a>
+          </li>
+        </ul>
+        <ul class="nav flex-column py-2">
+          <li class="nav-item">
+            <a class="nav-link link-dark" href="#">
+              <i class="fa-solid fa-fire fa-lg text-primary"></i>
+              Popular
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" href="#">
+              <i class="fa-solid fa-bolt fa-lg gmg-text-deep-red"></i>
+              Flash Sales
+            </a>
+          </li>
+          <li class="nav-item gmg-accordion">
+            <a
+              class="nav-link link-dark collapsed"
+              data-bs-toggle="collapse"
+              href="#menuCollapseOne"
+              role="button"
+              aria-expanded="false"
+              aria-controls="menuCollapseOne"
+            >
+              <i class="fa-solid fa-baby-carriage fa-lg text-success"></i>
+              Baby Care
+              <i class="fa-solid fa-angle-right ms-auto arrow"></i>
+            </a>
+            <div class="collapse levelOne" id="menuCollapseOne">
+              <ul class="gmg-accordion-menu">
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Newborn Essentials
+                  </a>
+                </li>
+                <li class="gmg-accordion-item gmg-accordion">
+                  <a
+                    class="gmg-accordion-link text-capitalize collapsed"
+                    data-bs-toggle="collapse"
+                    href="#subMenuCollapseOne"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="subMenuCollapseOne"
+                  >
+                    Diapers & Wipes
+                    <i class="fa-solid fa-angle-right ms-auto arrow"></i>
+                  </a>
+
+                  <div class="collapse" id="subMenuCollapseOne">
+                    <ul class="gmg-accordion-menu">
+                      <li class="gmg-accordion-item">
+                        <a href="#" class="gmg-accordion-link text-capitalize">
+                          Wipes
+                        </a>
+                      </li>
+                      <li class="gmg-accordion-item">
+                        <a href="#" class="gmg-accordion-link text-capitalize">
+                          Diapers
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Feeders
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Fooding
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Bath & Skincare
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Baby Accessories
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Fooding
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item gmg-accordion">
+            <a
+              class="nav-link link-dark collapsed"
+              data-bs-toggle="collapse"
+              href="#menuCollapseTwo"
+              role="button"
+              aria-expanded="false"
+              aria-controls="menuCollapseTwo"
+            >
+              <i class="fa-solid fa-paw fa-lg gmg-text-orange"></i>
+              Pet Care
+              <i class="fa-solid fa-angle-right ms-auto arrow"></i>
+            </a>
+            <div class="collapse levelOne" id="menuCollapseTwo">
+              <ul class="gmg-accordion-menu">
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Kitten Food
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Cat Food
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Dog Food
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Other Pet Foods
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Baby Accessories
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" href="#">
+              <i class="fa-solid fa-broom fa-lg text-dark"></i>
+              Home & Cleaning
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" href="#">
+              <i class="fa-solid fa-building fa-lg gmg-text-orange"></i>
+              Office Products
+            </a>
+          </li>
+          <li class="nav-item gmg-accordion">
+            <a
+              class="nav-link link-dark collapsed"
+              data-bs-toggle="collapse"
+              href="#menuCollapseThree"
+              role="button"
+              aria-expanded="false"
+              aria-controls="menuCollapseThree"
+            >
+              <i class="fa-solid fa-spa fa-lg text-primary"></i>
+              Beauty & Health
+              <i class="fa-solid fa-angle-right ms-auto arrow"></i>
+            </a>
+            <div class="collapse levelOne" id="menuCollapseThree">
+              <ul class="gmg-accordion-menu">
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Kitten Food
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Cat Food
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Dog Food
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Other Pet Foods
+                  </a>
+                </li>
+                <li class="gmg-accordion-item">
+                  <a href="#" class="gmg-accordion-link text-capitalize">
+                    Baby Accessories
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark" href="#">
+              <i class="fa-solid fa-car-crash fa-lg gmg-text-orange"></i>
+              Vehicle Essentials
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- small screen menu -->
+    <div
+      class="modal fade"
+      id="signin-up-sm"
+      tabindex="-1"
+      aria-labelledby="signinUpSmLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signinUpSmLabel">gomudigo.com</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul class="menu-list">
+              <li class="list-item">
+                <button
+                  type="button"
+                  class="btn w-100 text-start mb-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  <i class="fa-solid fa-right-to-bracket fa-lg me-2"></i>
+                  Login
+                </button>
+              </li>
+              <li class="list-item">
+                <button
+                  type="button"
+                  class="btn w-100 text-start mb-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  <i class="fa-solid fa-user-plus fa-lg me-2"></i>
+                  Sign Up
+                </button>
+              </li>
+              <li class="list-item">
+                <button type="button" class="btn w-100 text-start">
+                  <i class="fa-solid fa-circle-info fa-lg me-2"></i>
+                  Help
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- login/registration modal -->
+    <div
+      class="modal fade"
+      id="signinModal"
+      tabindex="-1"
+      aria-labelledby="signinModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signinModalLabel">Login</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="login-methods d-grid mb-3">
+              <button class="btn btn-lg btn-primary bg-opacity-75 border mb-2">
+                <i class="fa-brands fa-facebook-f fa-lg me-2"></i>
+                Sign Up or Login with Facebook
+              </button>
+              <button class="btn btn-lg btn-light border">
+                <i class="fa-solid fa-envelope fa-lg me-2"></i>
+                Login with Email
+              </button>
+            </div>
+            <div class="other-login-options">
+              <div class="divider">
+                <span class="or">or</span>
+              </div>
+              <p class="text-uppercase text-center my-5">
+                Please enter your phone number
+              </p>
+
+              <div class="input-group">
+                <span class="input-group-text fs-5 ps-2 pe-0" id="get-out-app">
+                  <img
+                    src="./assets/images/flag-bd.gif"
+                    alt="flag of bangladesh"
+                    class="img-fluid me-1"
+                    style="width: 1.75rem"
+                  />
+                  +
+                </span>
+                <input
+                  type="text"
+                  class="form-control py-lg-3 ps-1 fs-6 border"
+                  value="88"
+                  aria-label="phone"
+                  aria-describedby="get-out-app"
+                />
+              </div>
+              <button
+                class="btn py-3 mt-3 w-100 gmg-bg-orange text-white text-uppercase"
+                data-bs-toggle="modal"
+                data-bs-target="#verify-login"
+              >
+                Sign up / login
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p class="text-center">
+              This site is protected by reCAPTCHA and the Google
+              <a href="#" class="link-primary">Privacy Policy</a> and
+              <a href="#" class="link-primary">Terms of Service</a> apply.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verification Modal -->
+    <div
+      class="modal fade"
+      id="verify-login"
+      tabindex="-1"
+      data-bs-backdrop="static"
+      aria-labelledby="verifyLoginLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="verifyLoginLabel">
+              Login Verification
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="login-methods d-grid mb-3">
+              <button class="btn btn-lg btn-light border">
+                <i class="fa-solid fa-envelope fa-lg me-2"></i>
+                Login with Email
+              </button>
+            </div>
+            <div class="other-login-options">
+              <div class="divider">
+                <span class="or">or</span>
+              </div>
+              <p class="text-uppercase text-center my-5">
+                We've sent a 4-digit OTP in our phone
+                <span class="d-block">+8801245876952</span>
+              </p>
+
+              <input
+                type="text"
+                class="form-control border-0 border-bottom py-3"
+                placeholder="Please enter 4-digit OTP"
+              />
+
+              <div class="row my-3">
+                <div class="col-4 text-center">
+                  <button
+                    type="button"
+                    class="btn gmg-bg-orange text-white text-uppercase w-100"
+                  >
+                    Enter
+                  </button>
+                </div>
+                <div class="col-8">
+                  <button
+                    type="button"
+                    class="btn gmg-text-orange text-uppercase"
+                  >
+                    Request pin again
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p class="text-center">
+              This site is protected by reCAPTCHA and the Google
+              <a href="#" class="link-primary">Privacy Policy</a> and
+              <a href="#" class="link-primary">Terms of Service</a> apply.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header / end -->
+
+    <!-- sidebar - cart -->
+    <aside id="sidebar">
+      <button
+        type="button"
+        class="btn p-0 position-fixed top-50 end-0 translate-middle-y d-none d-md-inline-block bg-secondary bg-opacity-75 rounded-0 rounded-start fs-13 fw-bold text-center shadow"
+        style="z-index: 1040"
+        id="cart-togglerOne"
+      >
+        <i
+          class="fa-solid fa-basket-shopping fa-2x p-1 px-2 gmg-text-light-orange"
+        ></i>
+        <div class="item-count text-uppercase p-1 px-3 gmg-text-light-orange">
+          <span class="quantity">2</span>
+          items
+        </div>
+        <div class="total-price text-dark gmg-bg-light-orange p-1 px-3">
+          &#2547;309
+        </div>
+      </button>
+      <div
+        class="offcanvas offcanvas-end shadow"
+        data-bs-scroll="true"
+        data-bs-backdrop="false"
+        tabindex="-1"
+        id="sidebar-cart"
+        aria-labelledby="sidebarCartLabel"
+      >
+        <button
+          type="button"
+          class="btn position-absolute top-50 end-100 translate-middle-y d-none d-md-inline-block bg-secondary bg-opacity-75 rounded-0 rounded-start text-center shadow px-1 py-4"
+          id="cart-togglerTwo"
+        >
+          <i class="fa-solid fa-chevron-right fa-lg text-white"></i>
+        </button>
+        <div class="offcanvas-header border-bottom">
+          <h2 class="offcanvas-title h6 text-uppercase" id="sidebarCartLabel">
+            <i class="fa-solid fa-bag-shopping fa-lg me-2 text-secondary"></i>
+            <span class="product-count">2</span>
+            Items
+          </h2>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body p-0">
+          <div class="item-type disabled mb-3">
+            <h2 class="fs-14 fw-bold px-3 py-2 gmg-bg-muted">
+              Out of Stock Items
+            </h2>
+            <div class="item">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td scope="row">
+                      <div class="controls d-flex flex-column">
+                        <i class="fa-solid fa-angle-up arrow"></i>
+                        <span class="counter-text">1</span>
+                        <i class="fa-solid fa-angle-down arrow"></i>
+                      </div>
+                    </td>
+                    <td>
+                      <img
+                        src="./assets/images/saffola-honey-500-gm.webp"
+                        alt="Product image"
+                        class="img-fluid product-img"
+                      />
+                    </td>
+                    <td>
+                      <div class="details">
+                        <h3 class="fs-12">Saffola Hohey</h3>
+                        <div class="fs-10">
+                          <span class="money-symbol fw-bold">&#2547;</span>
+                          <span class="price">309</span>
+                          /
+                          <span class="amount">500gm</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="total-price fs-13">
+                        <span class="money-symbol fw-bold">&#2547;</span>
+                        <span class="price">309</span>
+                      </div>
+                    </td>
+                    <td>
+                      <button type="button" class="btn p-1 rm-product">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="item">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td scope="row">
+                      <div class="controls d-flex flex-column">
+                        <i class="fa-solid fa-angle-up arrow"></i>
+                        <span class="counter-text">1</span>
+                        <i class="fa-solid fa-angle-down arrow"></i>
+                      </div>
+                    </td>
+                    <td>
+                      <img
+                        src="./assets/images/saffola-honey-500-gm.webp"
+                        alt="Product image"
+                        class="img-fluid product-img"
+                      />
+                    </td>
+                    <td>
+                      <div class="details">
+                        <h3 class="fs-12">
+                          Saffola Hohey Saffola Hohey Saffola Hohey
+                        </h3>
+                        <div class="fs-10">
+                          <span class="money-symbol fw-bold">&#2547;</span>
+                          <span class="price">309</span>
+                          /
+                          <span class="amount">500gm</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="total-price fs-13">
+                        <span class="money-symbol fw-bold">&#2547;</span>
+                        <span class="price">309</span>
+                      </div>
+                    </td>
+                    <td>
+                      <button type="button" class="btn p-1 rm-product">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="item-type mb-3">
+            <h2 class="fs-14 fw-bold px-3 py-2 gmg-bg-muted">
+              <i class="fa-solid fa-truck-fast me-2"></i>
+              Express Delivery
+            </h2>
+            <div class="item">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td scope="row">
+                      <div class="controls d-flex flex-column">
+                        <i class="fa-solid fa-angle-up arrow"></i>
+                        <span class="counter-text">1</span>
+                        <i class="fa-solid fa-angle-down arrow"></i>
+                      </div>
+                    </td>
+                    <td>
+                      <img
+                        src="./assets/images/saffola-honey-500-gm.webp"
+                        alt="Product image"
+                        class="img-fluid product-img"
+                      />
+                    </td>
+                    <td>
+                      <div class="details">
+                        <h3 class="fs-12">
+                          Saffola Hohey Saffola Hohey Saffola Hohey
+                        </h3>
+                        <div class="fs-10">
+                          <span class="money-symbol fw-bold">&#2547;</span>
+                          <span class="price">309</span>
+                          /
+                          <span class="amount">500gm</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="total-price fs-13">
+                        <span class="money-symbol fw-bold">&#2547;</span>
+                        <span class="price">309</span>
+                      </div>
+                    </td>
+                    <td>
+                      <button type="button" class="btn p-1 rm-product">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="item">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td scope="row">
+                      <div class="controls d-flex flex-column">
+                        <i class="fa-solid fa-angle-up arrow"></i>
+                        <span class="counter-text">1</span>
+                        <i class="fa-solid fa-angle-down arrow"></i>
+                      </div>
+                    </td>
+                    <td>
+                      <img
+                        src="./assets/images/saffola-honey-500-gm.webp"
+                        alt="Product image"
+                        class="img-fluid product-img"
+                      />
+                    </td>
+                    <td>
+                      <div class="details">
+                        <h3 class="fs-12">
+                          Saffola Hohey Saffola Hohey Saffola Hohey
+                        </h3>
+                        <div class="fs-10">
+                          <span class="money-symbol fw-bold">&#2547;</span>
+                          <span class="price">309</span>
+                          /
+                          <span class="amount">500gm</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="total-price fs-13">
+                        <span class="money-symbol fw-bold">&#2547;</span>
+                        <span class="price">309</span>
+                      </div>
+                    </td>
+                    <td>
+                      <button type="button" class="btn p-1 rm-product">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="offcanvas-footer pb-5">
+          <div
+            class="progress rounded-0 bg-secondary position-relative"
+            style="height: 2rem"
+          >
+            <div
+              class="progress-bar progress-bar-striped gmg-bg-orange px-3"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 10%"
+            ></div>
+            <div class="progress-text position-absolute top-50 text-white">
+              Shop &#2547;309 more and save &#2547;10 fee
+            </div>
+            <div
+              class="progress-money-text position-absolute top-50 text-white"
+            >
+              <span class="fs-14">&#2547;</span>
+              9
+              <i class="fa-solid fa-circle-info fa-lg ms-2"></i>
+            </div>
+          </div>
+          <div class="special-code bg-secondary bg-opacity-25 mb-2">
+            <button
+              type="button"
+              class="btn fw-bold w-100 rounded-0"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseCartCoupon"
+              aria-expanded="false"
+              aria-controls="collapseCartCoupon"
+            >
+              <i class="fa-solid fa-circle-chevron-up fa-lg me-2"></i>
+              Have a special code?
+            </button>
+            <form
+              action="#"
+              method="post"
+              class="collapse"
+              id="collapseCartCoupon"
+            >
+              <div class="input-group p-3">
+                <input
+                  type="text"
+                  class="form-control bg-secondary bg-opacity-25 rounded"
+                  placeholder="Referral/Discount Code"
+                  aria-label="Referral/Discount Code"
+                />
+                <button
+                  type="submit"
+                  class="input-group-text btn btn-danger border-0 rounded mx-2"
+                >
+                  Go
+                </button>
+                <button type="submit" class="input-group-text btn border-0">
+                  Close
+                </button>
+              </div>
+            </form>
+          </div>
+          <a
+            href="./cart.html"
+            class="go-to-cart d-flex align-items-center justify-content-between px-3"
+          >
+            <button
+              type="button"
+              class="btn gmg-bg-orange text-capitalize w-75 rounded-0 rounded-start text-white py-2"
+            >
+              Place order
+            </button>
+            <button
+              type="button"
+              class="btn gmg-bg-deep-red w-25 rounded-0 rounded-end text-white py-2"
+            >
+              &#2547;309
+            </button>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- main body content / start -->
+    <main id="main">
+      <!-- profile section -->
+      <section class="user-profile px-3 py-4 py-lg-5">
+        <div class="container">
+          <h2 class="text-capitalize mb-4">Your Profile</h2>
+
+          <div class="profile-info">
+            <form class="row g-3" action="#" method="post">
+              <div class="col-12">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="Your Name"
+                  />
+                  <label for="username">Name</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="userEmail"
+                    placeholder="name@example.com"
+                  />
+                  <label for="userEmail">Email address</label>
+                  <button
+                    type="button"
+                    class="btn btn-danger gmg-bg-orange text-uppercase mt-3"
+                  >
+                    verify
+                  </button>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="userPhone"
+                    placeholder="i.e: +880 17245 857458"
+                  />
+                  <label for="userPhone">i.e: +880 17245 857458</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <select
+                    class="form-select"
+                    id="userGender"
+                    aria-label="userGender"
+                  >
+                    <option selected>Select your gender</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Other</option>
+                  </select>
+                  <label for="userGender">Gender</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating mb-3">
+                  <input
+                    type="datetime-local"
+                    class="form-control"
+                    id="userDOB"
+                    placeholder="(YYYY-MM-DD)"
+                  />
+                  <label for="userDOB">Date Of Birth</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body d-grid">
+                    <button
+                      type="button"
+                      class="btn btn-lg btn-outline-dark"
+                      data-bs-toggle="modal"
+                      data-bs-target="#assaingNewAddr"
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                      New Address
+                    </button>
+
+                    <ul class="added-addr">
+                      <li class="addr-item mt-3">
+                        <div
+                          class="bg-success bg-opacity-10 p-4 border border-success rounded d-flex align-items-center justify-content-between"
+                        >
+                          <div class="d-flex align-items-center">
+                            <i
+                              class="fa-solid fa-circle-check fa-lg text-success"
+                            ></i>
+                            <div class="details ms-2">
+                              <h2 class="fs-14 mb-0">30 Meradia</h2>
+                              <p class="mb-0 fs-13 fw-bold">Khilgaon, Dhaka</p>
+                            </div>
+                          </div>
+                          <div class="delete-addr">
+                            <button type="button" class="btn btn-danger">
+                              Delete
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="addr-item mt-3">
+                        <div
+                          class="bg-success bg-opacity-10 p-4 border border-success rounded d-flex align-items-center justify-content-between"
+                        >
+                          <div class="d-flex align-items-center">
+                            <i
+                              class="fa-solid fa-circle-check fa-lg text-success"
+                            ></i>
+                            <div class="details ms-2">
+                              <h2 class="fs-14 mb-0">30 Meradia</h2>
+                              <p class="mb-0 fs-13 fw-bold">Khilgaon, Dhaka</p>
+                            </div>
+                          </div>
+                          <div class="delete-addr">
+                            <button type="button" class="btn btn-danger">
+                              Delete
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="assaingNewAddr"
+                  tabindex="-1"
+                  aria-labelledby="assaingNewAddrLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="assaingNewAddrLabel">
+                          New Address
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="#" method="post">
+                          <div class="row needs-validation">
+                            <div class="col-12">
+                              <div class="form-floating mb-3">
+                                <textarea
+                                  class="form-control"
+                                  placeholder="Leave a comment here"
+                                  id="streetAddr"
+                                  style="height: 100px"
+                                ></textarea>
+                                <label for="streetAddr">Street Address</label>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="form-floating mb-3">
+                                <select
+                                  class="form-select"
+                                  id="selectArea"
+                                  aria-label="Select an area for shipping"
+                                >
+                                  <option selected>Select an area</option>
+                                  <option value="1">Khilgaon, Dhaka</option>
+                                  <option value="1">Banani, Dhaka</option>
+                                  <option value="1">Tejgaon, Dhaka</option>
+                                </select>
+                                <label for="selectArea">Area</label>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="form-floating mb-3">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="floorNo"
+                                  placeholder="Floor No"
+                                />
+                                <label for="floorNo">Floor No</label>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="form-floating mb-3">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="apartmentNo"
+                                  placeholder="Apartment No"
+                                />
+                                <label for="apartmentNo">Apartment No</label>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="form-floating mb-3">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="newUsername"
+                                  placeholder="Receipent's Name"
+                                />
+                                <label for="newUsername">Name</label>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="form-floating mb-3">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="userPhone"
+                                  placeholder="i.e: +880 17245 857458"
+                                />
+                                <label for="userPhone">Phone Number</label>
+                              </div>
+                            </div>
+                            <div class="col-12 d-grid">
+                              <button
+                                type="submit"
+                                class="btn gmg-bg-orange text-white text-uppercase"
+                              >
+                                Save Address
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- our app section -->
+      <section class="our-app pt-5">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-md-7 mb-5 mb-md-0">
+              <h2
+                class="h3 fw-normal section-heading text-capitalize text-center mb-5 mt-3 px-3 px-lg-0"
+              >
+                Be a part of our family
+              </h2>
+
+              <div class="get-app">
+                <form action="#" method="post">
+                  <div class="input-group">
+                    <span
+                      class="input-group-text fs-5 ps-2 pe-0"
+                      id="get-out-app"
+                    >
+                      <img
+                        src="./assets/images/flag-bd.gif"
+                        alt="flag of bangladesh"
+                        class="img-fluid me-1"
+                        style="width: 1.75rem"
+                      />
+                      +
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control py-lg-3 ps-1 fs-6 border"
+                      value="88"
+                      aria-label="phone"
+                      aria-describedby="get-out-app"
+                    />
+                    <button
+                      class="input-group-text btn gmg-bg-orange text-white"
+                      id="get-out-app2"
+                    >
+                      Get app
+                    </button>
+                  </div>
+                </form>
+                <p class="text-muted pt-2">e.g. +8801672955886</p>
+                <div class="row g-0 app-stores">
+                  <div class="col-6">
+                    <img
+                      src="./assets/images/lp_getandroidapp.webp"
+                      alt="Play Store"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <img
+                      src="./assets/images/lp_getappleapp.webp"
+                      alt="App Store"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="app-store-banner"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- home footer section -->
+      <section class="help py-4 py-lg-5">
+        <div class="container">
+          <div class="row g-0">
+            <div
+              class="col-lg-6 order-1 order-lg-0 d-flex align-items-center justify-content-center"
+            >
+              <div class="help-info text-center">
+                <h2 class="mb-2 fw-bold gmg-text-red h1">Need Help?</h2>
+                <p class="fs-3 mb-0">We are just a call away.</p>
+                <p class="fs-4 fw-bold mb-0">+88 01313 737366</p>
+                <p class="fs-4 fw-bold">+88 01752 528855</p>
+                <img
+                  src="./assets/images/logo.png"
+                  alt="GoMudiGo"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+            <div class="col-lg-6 order-lg-0 text-center">
+              <img
+                src="./assets/images/need-help-girls.webp"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- home footer nav links  -->
+      <section class="footer-nav py-4 py-lg-5">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 px-3">
+              <h2 class="h5">Customer Services</h2>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="#" class="nav-link link-dark ps-0"> FAQs </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link link-dark ps-0">
+                    Return Policy
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 px-3">
+              <h2 class="h5">About GoMudiGo</h2>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="#" class="nav-link link-dark ps-0"> About Us </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link link-dark ps-0">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link link-dark ps-0"> Terms of Use </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 px-3">
+              <h2 class="h5">For Business</h2>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="#" class="nav-link link-dark ps-0"> Corporate </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 px-3">
+              <h2 class="h5">Contact Us</h2>
+              <ul class="nav flex-column">
+                <li class="nav-item d-flex align-items-center py-2">
+                  <i class="fa-solid fa-map-location-dot fa-lg me-3"></i>
+                  137 Tejgaon Insductrial Area, Tejgaon, Dhaka-1208
+                </li>
+                <li class="nav-item d-flex align-items-center py-2">
+                  <i class="fa-solid fa-phone fa-lg me-3"></i>
+                  (+880) 9611 84 84 84
+                </li>
+                <li class="nav-item d-flex align-items-center py-2">
+                  <i class="fa-solid fa-envelope fa-lg me-3"></i>
+                  support@gomudigo.com
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact section -->
+      <section class="contact p-3 py-lg-5">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-4 text-center px-3">
+              <h2 class="h5 mb-3">Connect with us</h2>
+              <div class="socials pt-2">
+                <a href="#" class="link-primary p-2 mx-1 d-inline-block">
+                  <i class="fa-brands fa-facebook-f fs-3"></i>
+                </a>
+                <a href="#" class="link-danger p-2 mx-1 d-inline-block">
+                  <i class="fa-brands fa-instagram fs-3"></i>
+                </a>
+                <a href="#" class="link-info p-2 mx-1 d-inline-block">
+                  <i class="fa-brands fa-twitter fs-3"></i>
+                </a>
+                <a href="#" class="link-danger p-2 mx-1 d-inline-block">
+                  <i class="fa-brands fa-youtube fs-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center px-3">
+              <h2 class="h5 mb-3">Download our apps</h2>
+              <div class="row">
+                <div class="col-6">
+                  <a href="#">
+                    <img
+                      src="./assets/images/lp_getandroidapp.webp"
+                      alt="Play Store"
+                      class="img-fluid"
+                    />
+                  </a>
+                </div>
+                <div class="col-6">
+                  <a href="#">
+                    <img
+                      src="./assets/images/lp_getappleapp.webp"
+                      alt="App Store"
+                      class="img-fluid"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 px-3 pt-5">
+              <form
+                action="#"
+                method="post"
+                class="d-flex align-items-center justify-content-center"
+              >
+                <div class="input-group" style="max-width: 310px">
+                  <input
+                    type="email"
+                    class="form-control fs-6"
+                    placeholder="Your Email Address"
+                  />
+                  <button class="btn btn-warning gmg-bg-orange">
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- copyright section -->
+      <section class="copyright bg-dark text-white p-4">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-md-6">
+              <p class="mb-0 text-center text-md-end">
+                Copyright &copy; 2021 Gomudigo. All Rights Reserved.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p class="mb-0 text-md-end text-center pt-3 pt-md-0">
+                Payment methods:
+                <img
+                  src="./assets/images/ssl.webp"
+                  alt="Payment Methods"
+                  width="180"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- chat box section -->
+      <section class="position-fixed bg-white shadow rounded-top" id="chat-box">
+        <button
+          class="btn rounded-top gmg-bg-orange text-white fs-6 fw-bold px-5 py-3 chat-toggler"
+        >
+          <i class="fa-regular fa-comment-dots"></i>
+          Live Chat
+        </button>
+        <div class="chatBox">
+          <div
+            class="chatBox-top gmg-bg-orange d-flex align-items-start justify-content-between p-2"
+          >
+            <div class="left text-white">
+              <h2 class="h6 mb-0">Questions? Chat with us!</h2>
+              <p class="fs-14">Support is online</p>
+              <div class="user-icons">
+                <ul class="users d-flex align-items-center">
+                  <li class="icon me-1">
+                    <a href="#">
+                      <img
+                        src="./assets/images/placeholder.png"
+                        alt="user chat icon"
+                        width="32"
+                        height="32"
+                        class="rounded-circle"
+                      />
+                    </a>
+                  </li>
+                  <li class="icon me-1">
+                    <a href="#">
+                      <img
+                        src="./assets/images/placeholder.png"
+                        alt="user chat icon"
+                        width="32"
+                        height="32"
+                        class="rounded-circle"
+                      />
+                    </a>
+                  </li>
+                  <li class="icon me-1">
+                    <a href="#">
+                      <img
+                        src="./assets/images/placeholder.png"
+                        alt="user chat icon"
+                        width="32"
+                        height="32"
+                        class="rounded-circle"
+                      />
+                    </a>
+                  </li>
+                  <li class="icon me-1">
+                    <a href="#">
+                      <span
+                        class="bg-secondary bg-opacity-50 d-flex align-items-center justify-content-center fs-12 fw-bold text-white rounded-circle"
+                        style="height: 2rem; width: 2rem"
+                      >
+                        55+
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn close-btn text-white"
+              aria-label="Close"
+            >
+              <i class="fa-solid fa-xmark fa-lg"></i>
+            </button>
+          </div>
+          <div class="chat-fields bg-white px-2 py-3">
+            <div class="user-message">
+              <ul>
+                <li class="message-stack d-flex align-items-st mb-3">
+                  <a href="#">
+                    <img
+                      src="./assets/images/placeholder.png"
+                      alt="user chat icon"
+                      width="32"
+                      height="32"
+                      class="rounded-circle border border-1 border-danger"
+                    />
+                  </a>
+                  <p class="message gmg-bg-orange text-white m-0 ms-2 py-1">
+                    How can we help with Go Mudi Go?
+                  </p>
+                </li>
+                <li
+                  class="message-stack d-flex align-items-center justify-content-end mb-3"
+                >
+                  <p class="message gmg-bg-orange text-white m-0 me-2 py-1">
+                    How can we help with Go Mudi Go?
+                  </p>
+                  <a href="#">
+                    <img
+                      src="./assets/images/placeholder.png"
+                      alt="user chat icon"
+                      width="32"
+                      height="32"
+                      class="rounded-circle border border-1 border-danger"
+                    />
+                  </a>
+                </li>
+                <li class="message-stack d-flex align-items-st mb-3">
+                  <a href="#">
+                    <img
+                      src="./assets/images/placeholder.png"
+                      alt="user chat icon"
+                      width="32"
+                      height="32"
+                      class="rounded-circle border border-1 border-danger"
+                    />
+                  </a>
+                  <p class="message gmg-bg-orange text-white m-0 ms-2 py-1">
+                    How can we help with Go Mudi Go?
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="chat-bottom">
+            <form action="#" method="post">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control rounded-0 border-0 border-top fs-6 gmg-text-red"
+                  placeholder="Compose your message"
+                  autocomplete="off"
+                  aria-label="User's Message"
+                  id="send-message"
+                />
+                <div
+                  class="input-group-text rounded-0 border-0 border-top bg-transparent"
+                >
+                  <button type="button" class="btn p-0 gmg-text-red fs-4 mx-1">
+                    <i class="fa-regular fa-face-grin"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-more p-0 gmg-text-red fs-4 mx-1"
+                  >
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-send p-0 gmg-text-red fs-4 mx-1"
+                  >
+                    <i class="fa-regular fa-paper-plane"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- main body content / end -->
+
+    <!-- footer / start -->
+    <footer id="footer">
+      <!-- floating small navigation menu -->
+      <nav class="footer-navbar-sm fixed-bottom bg-white shadow d-md-none">
+        <ul class="footer-navbar-nav d-flex align-items-center">
+          <li class="nav-item">
+            <button type="button" class="nav-link btn chat-toggler fs-3">
+              <i class="fa-solid fa-comment-dots"></i>
+            </button>
+          </li>
+          <li class="nav-item w-100 gmg-bg-orange">
+            <a
+              href="./cart.html"
+              class="nav-link text-white text-capitalize fs-5"
+              style="font-weight: 500"
+            >
+              Place order
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link position-relative fs-3"
+              data-bs-toggle="offcanvas"
+              href="#sidebar-cart"
+              role="button"
+              aria-controls="sidebar-cart"
+            >
+              <i class="fa-solid fa-cart-arrow-down"></i>
+              <span
+                class="position-absolute translate-middle badge rounded-pill gmg-bg-orange p-1"
+                style="top: 0.5rem; left: 2.625rem; font-size: 0.75rem"
+              >
+                99
+                <span class="visually-hidden">Added products</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <!-- footer / end -->
+
+    <!-- Bootstrap library -->
+    <script src="./assets/packages/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom js -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
