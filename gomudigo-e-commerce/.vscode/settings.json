@@ -2,7 +2,7 @@
   //editor
   "editor.fontSize": 16,
   // theme
-  "workbench.colorTheme": "Community Material Theme High Contrast",
+  "workbench.colorTheme": "Learn with Sumit Theme",
   // config related to code formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
@@ -23,5 +23,8 @@
       "savePath": "/assets/css"
     }
   ],
-  "liveSassCompile.settings.generateMap": false
+  "liveSassCompile.settings.generateMap": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }

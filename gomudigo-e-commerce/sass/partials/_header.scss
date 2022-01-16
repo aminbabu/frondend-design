@@ -26,12 +26,17 @@
 
       .arrow {
         transition: 300ms ease;
-        transform: rotate(90deg);
+        width: 2.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       [aria-expanded="true"] {
         color: $color-deep-red;
         font-weight: 700;
+        transform: rotate(90deg);
       }
     }
 
@@ -62,7 +67,7 @@
       }
 
       .collapsed {
-        .arrow {
+        &.arrow {
           transform: rotate(0);
         }
       }
